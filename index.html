@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content & Login Page</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container_content">
+        <div class="content">
+            <h6>We are glad to invite to you</h6>
+            <h4>the wedding celebration of</h4>
+            <h1>diana and andrew</h1>
+            <div class="time">
+                <div class="box_time">
+                    <h2>5 june 2023 at 2pm</h2>
+                    <button id="count_days">-344</button>
+                    <p>Days</p>
+                </div>
+                <div class="box_time">
+                    <button id="count_hours">00</button>
+                    <p>Hours</p>
+                </div>
+                <div class="box_time">
+                    <button id="count_minutes">00</button>
+                    <p>Minutes</p>
+                </div>
+                <div class="box_time">
+                    <button id="count_seconds">00</button>
+                    <p>Seconds</p>
+                </div>
+            </div>
+        </div>
+        <div class="social_link">
+            <a href="#" style="--bg: #3C5B9C"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" style="--bg: #55ACEF"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" style="--bg: #D40B9A"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+    </div>
+    <div class="container_loginPage">
+        <form action="#">
+            <h1>please fill with your details</h1>
+            <div class="form_group">
+                <input type="text" name="first_name" placeholder="First Name">
+                <i class="fa-regular fa-user"></i>
+            </div>
+            <div class="form_group">
+                <input type="text" name="last_name" placeholder="Last Name">
+                <i class="fa-regular fa-user"></i>
+            </div>
+            <div class="form_group">
+                <input type="email" name="email" placeholder="Email">
+                <i class="fa-regular fa-envelope"></i>
+            </div>
+            <div class="form_group">
+                <input type="tel" name="telephone" placeholder="Your Telephone">
+                <i class="fa-solid fa-square-phone-flip"></i>
+            </div>
+            <div class="">
+                <button type="submit" class="submitButton">Next</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Function to calculate the remaining time
+        function calculateTimeRemaining(endTime) {
+            const now = new Date().getTime();
+            const timeRemaining = endTime - now;
+
+            const seconds = Math.floor((timeRemaining / 1000) % 60);
+            const minutes = Math.floor((timeRemaining / 1000 / 60) % 60);
+            const hours = Math.floor((timeRemaining / 1000 / 60 / 60) % 24);
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+
+            return {
+                total: timeRemaining,
+                days: days,
+                hours: hours,
+                minutes: minutes,
+                seconds: seconds,
+            };
+        }
+
+        // Function to initialize the countdown
+        function initializeCountdown(endTime) {
+            function updateCountdown() {
+                const t = calculateTimeRemaining(endTime);
+                let count_days = document.querySelector("#count_days");
+                let count_hours = document.querySelector("#count_hours");
+                let count_seconds = document.querySelector("#count_seconds");
+                let count_minutes = document.querySelector("#count_minutes");
+
+                count_days.innerHTML = t.days;
+                count_hours.innerHTML = t.hours;
+                count_seconds.innerHTML = t.seconds;
+                count_minutes.innerHTML = t.minutes;
+
+                if (t.total <= 0) {
+                    clearInterval(timeinterval);
+                    // countdownElement.innerHTML = "EXPIRED";
+                }
+            }
+
+            updateCountdown(); // run function once at first to avoid delay
+            const timeinterval = setInterval(updateCountdown, 1000);
+        }
+
+        // Set the end time for 1 year from now
+        const currentDate = new Date();
+        const endTime = new Date(
+            currentDate.getFullYear() + 1,
+            currentDate.getMonth(),
+            currentDate.getDate(),
+            currentDate.getHours(),
+            currentDate.getMinutes(),
+            currentDate.getSeconds()
+        );
+
+        initializeCountdown(endTime);
+    </script>
