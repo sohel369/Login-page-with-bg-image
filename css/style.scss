@@ -113,10 +113,10 @@ body {
         background: linear-gradient(to right, #EC7323, #FBB317, );
 
         form {
-            height: 100vh;
+            height: 80%;
             width: 100%;
             text-align: center;
-            margin-top: 200px;
+            // margin-top: 200px;
 
             .form_group{
                 width: 50%;
@@ -165,7 +165,7 @@ body {
                 cursor: pointer;
                 position: absolute;
                 right: 175px;
-                top: 320px;
+                top: 330px;
                 border-top-right-radius: 8px;
                 border-bottom-left-radius: 8px;
             }
@@ -176,10 +176,13 @@ body {
             text-transform: capitalize;
             font-size: 20px;
             color: #fff;
-            position: absolute;
-            top: 80px;
-            left: 160px;
+            // position: absolute;
+            // top: 80px;
+            // left: 166px;
             margin-bottom: 20px;
+            text-align: center;
+            margin-right: 70px;
+            margin-top: 20px;
         }
 
 

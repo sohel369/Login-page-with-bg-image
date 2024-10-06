@@ -55,7 +55,7 @@ body .container_content .time h2 {
   position: absolute;
   top: -60px;
   left: 20px;
-  font-size: 20px;
+  font-size: 30px;
   text-transform: capitalize;
   color: #fff;
 }
@@ -79,12 +79,11 @@ body .container_content .social_link {
   position: absolute;
   top: 10px;
   right: 10px;
-  color: #00ffee;
 }
 body .container_content .social_link a {
   font-size: 20px;
   margin: 10px;
-  color: #00ffee;
+  color: #555;
 }
 body .container_loginPage {
   height: 100vh;
@@ -96,10 +95,9 @@ body .container_loginPage {
   background: linear-gradient(to right, #EC7323, #FBB317);
 }
 body .container_loginPage form {
-  height: 100vh;
+  height: 80%;
   width: 100%;
   text-align: center;
-  margin-top: 200px;
 }
 body .container_loginPage form .form_group {
   width: 50%;
@@ -152,7 +150,7 @@ body .container_loginPage form .submitButton {
   cursor: pointer;
   position: absolute;
   right: 175px;
-  top: 320px;
+  top: 330px;
   border-top-right-radius: 8px;
   border-bottom-left-radius: 8px;
 }
@@ -160,10 +158,10 @@ body .container_loginPage h1 {
   text-transform: capitalize;
   font-size: 20px;
   color: #fff;
-  position: absolute;
-  top: 80px;
-  left: 160px;
   margin-bottom: 20px;
+  text-align: center;
+  margin-right: 70px;
+  margin-top: 20px;
 }
 
 @media screen and (max-width: 768px) {
